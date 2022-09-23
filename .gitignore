@@ -1,0 +1,11 @@
+# Ignore
+.settings
+
+#Ignore
+.cproject
+
+#Ignore
+.oppbuildspec
+
+#Ignore
+.project
