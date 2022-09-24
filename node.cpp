@@ -6,8 +6,8 @@ using namespace omnetpp;
 class Node : public cSimpleModule {
     protected:
     virtual void initialize() override;
-    virtual void handleMessage() override;
-} 
+    virtual void handleMessage( cMessage* msg ) override;
+};
 
 Define_Module( Node );
 
@@ -27,7 +27,7 @@ void Node::handleMessage( cMessage *msg ) {
     int interfaceInput = arrivalGate->getIndex();
 
     for( int i = 0; i < gateSize( "downlink" ); i++ ) {
-        EV << "Forwarding message " << msg << "on port out["<< i <<"]\n"
+        EV << "Forwarding message " << msg << "on port out["<< i <<"]\n";
         cMessage* msgCopy = (cMessage*) msg->dup();
         send( msgCopy, "downlink", i );
     }

@@ -9,3 +9,12 @@
 
 #Ignore
 .project
+
+#Ignore
+.qtenvrc
+
+#Ignore 
+out
+
+#Ignore
+results

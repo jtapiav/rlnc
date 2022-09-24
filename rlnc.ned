@@ -20,7 +20,7 @@ simple Node
         output downlink[];
 }
 
-network Butterfly
+network rlnc
 {
     submodules:
 
