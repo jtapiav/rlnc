@@ -9,6 +9,10 @@ class Node : public cSimpleModule {
     virtual void handleMessage( cMessage* msg ) override;
 };
 
+class Encoder: public Node {
+    
+}
+
 Define_Module( Node );
 
 void Node::initialize() {
