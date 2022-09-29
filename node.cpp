@@ -9,11 +9,19 @@ class Node : public cSimpleModule {
     virtual void handleMessage( cMessage* msg ) override;
 };
 
-class Encoder: public Node {
-    
-}
+class Encoder : public Node {
+    protected:
+    virtual void handleMessage( cMessage* msg ) override;
+};
+
+class Decoder : public Node {
+    protected:
+    virtual void handleMessage( cMessage* msg ) override;
+};
 
 Define_Module( Node );
+Define_Module( Encoder );
+Define_Module( Decoder );
 
 void Node::initialize() {
     EV << getName();
@@ -36,3 +44,11 @@ void Node::handleMessage( cMessage *msg ) {
         send( msgCopy, "downlink", i );
     }
 }   
+
+void Encoder::handleMessage( cMessage *msg ) {
+
+}
+
+void Decoder::handleMessage( cMessage* msg ) {
+
+}
